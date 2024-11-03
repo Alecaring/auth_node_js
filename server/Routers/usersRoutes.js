@@ -1,11 +1,14 @@
 const express   = require('express');
-const RegisterController = require('../Controllers/registerController');
 const router    = express.Router();
 
-// router.get('/', (request, response) => {
+const RegisterController = require('../Controllers/registerController');
+
+// router.get('/all', (request, response) => {
 //     response.send(` <h1>loggato</h1> `)
 // });
 
 router.post('/register', RegisterController.createUser);
+router.get('/all-json', RegisterController.getAllUsers);
+router.get('/request', RegisterController.request);
 
 module.exports = router;
